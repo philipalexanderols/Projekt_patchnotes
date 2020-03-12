@@ -1,8 +1,6 @@
 from html.parser import HTMLParser
 import urllib.request
 
-# https://www.smitegame.com/news/grim-omens-7-3-update-notes/ 
-
 readData = False
 filename = ""
 class MyHTMLParser(HTMLParser): 
@@ -40,11 +38,6 @@ class MyHTMLParser(HTMLParser):
     
 def save_image(pic_url, name):
     urllib.request.urlretrieve(pic_url, "images/"+name+".png")
-        # for block in response.iter_content(1024):
-        #     if not block:
-        #         break
-            
-        #     handle.write(block)
     
 parser = MyHTMLParser()
 infil = open("SmiteNotes.html", "r", encoding="utf-8")
