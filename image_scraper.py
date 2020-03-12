@@ -1,5 +1,6 @@
 from html.parser import HTMLParser
 import urllib.request
+import os
 
 readData = False
 filename = ""
@@ -37,6 +38,8 @@ class MyHTMLParser(HTMLParser):
 
     
 def save_image(pic_url, name):
+    if not os.path.exists("images"):
+        os.mkdir("images")
     urllib.request.urlretrieve(pic_url, "images/"+name+".png")
     
 parser = MyHTMLParser()
